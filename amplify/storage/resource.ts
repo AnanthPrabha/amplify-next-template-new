@@ -4,7 +4,6 @@ export const storage = defineStorage({
   name: 'neuTestBrowserStorage',
 
   // 🔹 IMPORTANT: Use existing bucket
-  bucketName: 'neu-test-browser',
 
   access: (allow) => ({
     'public/*': [
