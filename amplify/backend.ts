@@ -11,8 +11,8 @@ const customBucketStack = backend.createStack("custom-bucket-stack");
 
 // Import existing bucket
 const customBucket = Bucket.fromBucketAttributes(customBucketStack, "MyCustomBucket", {
-  bucketArn: "arn:aws:s3:::<bucket-name>",
-  region: "<region>"
+  bucketArn: "arn:aws:s3:::neu-test-browser",
+  region: "us-east-1"
 });
 
 backend.addOutput({
