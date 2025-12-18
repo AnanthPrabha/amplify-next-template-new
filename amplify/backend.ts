@@ -10,11 +10,11 @@ const backend = defineBackend({
 backend.addOutput({
   storage: {
     aws_region: "us-east-1",
-    bucket_name: "neu-test-browser-new",
+    bucket_name: "neu-test-browser",
     buckets: [
       {
         name: "test-browser-bucket", // Friendly name for your frontend code
-        bucket_name: "neu-test-browser-new",
+        bucket_name: "neu-test-browser",
         aws_region: "us-east-1",
         paths: {
           "public/*": {
