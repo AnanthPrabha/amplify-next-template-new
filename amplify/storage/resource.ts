@@ -1,3 +1,18 @@
-// amplify/storage/resource.ts
-// Leave this file empty if you are only using an existing bucket.
+import { defineStorage } from '@aws-amplify/backend';
 
+export const storage = defineStorage({
+  name: 'neu-test-browser',
+  access: (allow) => ({
+    'public/*': [
+      allow.guest.to(['read']),
+      allow.authenticated.to(['read', 'write', 'delete']),
+    ],
+    'protected/{entity_id}/*': [
+      allow.authenticated.to(['read']),
+      allow.entity('identity').to(['read', 'write', 'delete'])
+    ],
+    'private/{entity_id}/*': [
+      allow.entity('identity').to(['read', 'write', 'delete'])
+    ]
+  })
+});
